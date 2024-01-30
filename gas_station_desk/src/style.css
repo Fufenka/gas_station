@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+body {
+ font-family: 'Russo One', sans-serif;
+ font-size: 28px;
+ background-color:#1b191c;
+ color: #c2590e;
+}
+/*серый*/
+#custom-label{
+color: #8a8988;
+font-size: 15px;
+}
+
+/*оранжевый*/
+
+#custom-label2{
+color: #fc7a00;
+font-size: 27px;
+text-align: center;
+}
+/*темно оранжевый*/
+
+#custom-label3{
+color: #c2590e;
+font-size: 17px;
+}
+
+/* то что сверху */
+#custom-label4{
+color: #9c9a9a;
+font-size: 26px;
+}
+
+#custom-label5{
+color: #fc7a00;
+font-size: 27px;
+text-align: center;
+
+}
+
+.line {
+  margin-left: 0;
+  width: 99%;
+  height: 2px;
+  background-color: #242323;
+  margin-bottom: 10px
+}
+
+.container-search {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.num-field__input, .num-field__btn {
+    width: 30%;
+    height: 6%;
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #8a8988;
+    background-color: #6b6b6b;
+    background-clip: padding-box;
+
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+}
+
+.num-field__input:focus {
+    color: #8a8988;
+    background-color: #fff;
+    border-color: #8a8988;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.num-field__btn {
+    appearance: none;
+    border: 10;
+    border-radius: 10px;
+    background: #1b191c;
+    color: #5e5e5e;
+    padding: 8px 16px;
+    font-size: 16px;
+    border-color: #5e5e5e;
+}
+
+.num-field__btn:hover {
+    background: #f7f7f7;
+}
+
+#azsData {
+    display: none;
+    margin-top: 20px;
+    /*text-align: center;*/
+}
+
+#azsData h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+#azsData input[type="text"],
+#azsData input[type="number"] {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+#azsData button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#azsData button:hover {
+    background-color: #45a049;
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+    /* ширина scrollbar */
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #1b191c;
+    /* цвет дорожки */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #8a8988;
+    /* цвет плашки */
+    border-radius: 50px;
+    /* закругления плашки */
+    border: 3px solid #1b191c;
+    /* padding вокруг плашки */
+  }

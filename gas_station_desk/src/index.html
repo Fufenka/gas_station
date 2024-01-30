@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AZS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="line"></div>
+    <div class="cotnainer-search">
+        <label id="custom-label4" for="stationId">ID АЗС:</label>
+        <div class="button-search">
+            <input class="num-field__input" type="number" id="stationId" min="1" max="99" />
+            <button class="num-field__btn" onclick="loadData()">Далее</button>
+        </div>
+        <br>
+        <div class="line"></div>
+    </div>
+
+    <div id="azsData" style="display: none;">
+        <h2>Управление АЗС №<span id="stationIdValue"></span></h2>
+        <label for="geographicalAddress">Географический адрес АЗС:</label>
+        <input class="num-field__input" type="text" id="geographicalAddress" />
+
+        <label for="price92">Цена литра АИ-92 в рублях:</label>
+        <input class="num-field__input" type="text" id="price92" />
+
+        <label for="amount92">Остаток АИ-92 в хранилище в литрах:</label>
+        <input class="num-field__input" type="number" id="amount92" />
+
+        <label for="price95">Цена литра АИ-95 в рублях:</label>
+        <input class="num-field__input" type="text" id="price95" />
+
+        <label for="amount95">Остаток АИ-95 в хранилище в литрах:</label>
+        <input class="num-field__input" type="number" id="amount95" />
+
+        <label for="price98">Цена литра АИ-98 в рублях:</label>
+        <input class="num-field__input" type="text" id="price98" />
+
+        <label for="amount98">Остаток АИ-98 в хранилище в литрах:</label>
+        <input class="num-field__input" type="number" id="amount98" />
+
+        <label for="priceDF">Цена литра ДТ в рублях:</label>
+        <input class="num-field__input" type="text" id="priceDF" />
+
+        <label for="amountDF">Остаток ДТ в хранилище в литрах:</label>
+        <input class="num-field__input" type="number" id="amountDF" />
+
+
+        <button class="num-field__btn" onclick="saveChanges()">Сохранить</button>
+
+    </div>
+
+    <script src='renderer.js'></script>
+</body>
+
+</html>

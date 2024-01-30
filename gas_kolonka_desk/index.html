@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZS App</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="StartWork">
+        <label for="azsId" id="custom-label4">ID АЗС:</label>
+        <input class="text-field__input5" type="text" id="azsId" name="azsId"><br><br>
+
+        <label for="columnId" id="custom-label4">ID колонки:</label>
+        <input class="text-field__input5" type="text" id="columnId" name="columnId"><br><br>
+
+        <button onclick="sendData()" class="c-button">Начать работу</button>
+    </div>
+
+    <div id="fuelOptions" class="hidden">
+        <label for="fuelType">Шаг 1. Выберите вид топлива:</label><br>
+        <select class="text-field__input4" id="fuelType"></select><br>
+    </div>
+
+    <div id="refuelingOptions" class="hidden">
+        <label for="refuelingMode">Шаг 2. Выберите режим заправки:</label><br>
+        <input type="radio" class="custom-checkbox" id="fixedVolume" name="refuelingMode" value="fixedVolume" checked>
+        <label id="custom-label" for="fixedVolume">Фиксированный объем:</label>
+        <input class="text-field__input" type="text" id="fixedVolumeAmount" name="fixedVolumeAmount" value=0>
+        <label id="custom-label">Литров</label><br>
+
+        <input class="custom-checkbox" type="radio" id="fixedPrice" name="refuelingMode" value="fixedPrice">
+        <label id="custom-label" for="fixedPrice">Фиксированная цена:</label>
+        <input class="text-field__input" type="text" id="fixedPriceAmount" name="fixedPriceAmount" value=0>
+        <label id="custom-label">Рублей</label><br>
+    </div>
+
+    <div id="paymentOptions" class="hidden">
+        <label for="paymentMethod">Шаг 3. Выберите способ оплаты:</label><br>
+        <input type="radio" class="custom-checkbox" id="loyaltyCard" name="paymentMethod" value="loyaltyCard" checked>
+        <label id="custom-label" for="loyaltyCard">Накопительная карта</label><br>
+        <input type="radio" class="custom-checkbox" id="bankCard" name="paymentMethod" value="bankCard">
+        <label id="custom-label" for="bankCard">Банковская карта</label><br>
+        <div class="line"></div>
+        <!-- Modal for entering card details -->
+        <div id="cardDetailsModal" class="modal">
+            <div class="modal-content">
+                <h2 id="custom-label2"> Ввод данных карты</h2>
+                <div class="modal-input">
+                    <label id="custom-label3" for="cardNumber">Номер карты:</label><br>
+                    <input class="text-field__input2" type="text" id="cardNumber" name="cardNumber" maxlength="19"
+                        pattern="\d{4}\s?\d{4}\s?\d{4}\s?\d{4}" placeholder="xxxx xxxx xxxx xxxx" required>
+                </div>
+                <div class="modal-input">
+                    <label id="custom-label3" for="cardHolder">Держатель карты:</label><br>
+                    <input class="text-field__input2" type="text" id="cardHolder" name="cardHolder"
+                        pattern="[a-zA-Z]+\s[a-zA-Z]+" placeholder="Имя Фамилия" required>
+                </div>
+                <div class="modal-input">
+                    <label id="custom-label3" for="cardcvc">cvc</label><br>
+                    <input class="text-field__input2" type="text" id="cardcvc" name="cardcvc" maxlength="3"
+                        placeholder="xxx" required>
+                </div>
+                <div class="modal-error" id="cardDetailsError"></div>
+                <button class="c-button2" onclick="processPayment()">Оплатить</button>
+            </div>
+        </div>
+        <div id="bonuscardDetailsModal" class="modal">
+            <h2 id="custom-label5"> Ввод данных бонусной карты</h2>
+            <div class="modal-input">
+                <label id="custom-label3" for="PhoneNumber">Номер телефона:</label>
+                <input class="text-field__input2" type="text" id="PhoneNumber" name="PhoneNumber"
+                    placeholder="Номер телефона" required>
+            </div>
+            <div class="modal-error" id="cardDetailsError"></div>
+            <div id="BonusCardChoice" class="hidden">
+                <label id="custom-label3" for="paymentMethod">Выберите дальнейший способ оплаты в случае нехватки
+                    бонусов:</label><br>
+                <input class="custom-checkbox1" type="radio" id="BankCardNext" name="NextPaymentOption"
+                    value="BankCardNext" checked>
+                <label id="custom-label3" for="BankCardNext">Доплатить с Банковской карты</label><br>
+                <input class="custom-checkbox1" type="radio" id="SpendAllBonus" name="NextPaymentOption"
+                    value="SpendAllBonus">
+                <label id="custom-label3" for="SpendAllBonus">Залить литров, на которые хватает</label><br>
+            </div>
+            <button class="c-button2" onclick="processPayment()">Оплатить</button>
+            <button class="c-button2" id="openModalBtn">Создать новую карту</button>
+        </div>
+    </div>
+    <div class="modal-content">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="custom-label5">Анкета на создание новой карты</h2> <br>
+
+                <!-- Добавьте здесь поля анкеты для создания новой карты -->
+                <label id="custom-label3" for="cardNumber">Номер телефона:</label>
+                <input class="text-field__input2" type="text" id="BonCardNumber" name="cardNumber"
+                    placeholder="Номер телефона">
+
+                <label id="custom-label3" for="BonCardHolder">Владелец карты:</label>
+                <input class="text-field__input2" type="text" id="BonCardHolder" name="cardHolder"
+                    placeholder="Владец карты"><br>
+
+                <button class="c-button2" onclick="createNewCard()">Создать</button>
+            </div>
+        </div>
+    </div>
+    <div id="responseContainer"></div>
+
+
+    <script src='renderer.js'></script>
+</body>
+
+</html>

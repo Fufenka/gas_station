@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AZS App</title>
+    <style>
+        div {
+            margin: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+body {
+  font-family: 'Russo One', sans-serif;
+  font-size: 28px;
+  background-color: #1b191c;
+  color: #7fcf00;
+}
+
+/*серый*/
+#custom-label {
+  color: #8a8988;
+  font-size: 15px;
+}
+
+/*оранжевый*/
+
+#custom-label2 {
+  color: #fc7a00;
+  font-size: 27px;
+  text-align: center;
+}
+
+/*темно оранжевый*/
+
+#custom-label3 {
+  color: #c2590e;
+  font-size: 17px;
+}
+
+/* то что сверху */
+#custom-label4 {
+  color: #9c9a9a;
+  font-size: 26px;
+}
+
+#custom-label5 {
+  color: #fc7a00;
+  font-size: 27px;
+  text-align: center;
+
+}
+
+.line {
+  margin-left: 0;
+  width: 99%;
+  height: 2px;
+  background-color: #242323;
+  margin-bottom: 10px
+}
+
+.c-button {
+  appearance: none;
+  border: 10;
+  border-radius: 10px;
+  background: #1b191c;
+  color: #5e5e5e;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-color: #5e5e5e;
+}
+
+.c-button:hover {
+  background: #f7f7f7;
+}
+
+.c-button2 {
+  appearance: none;
+  border: 10;
+  border-radius: 10px;
+  background: #1b191c;
+  color: #c2590e;
+  padding: 8px 16px;
+  font-size: 16px;
+  border-color: #c2590e;
+  margin-left: 10px;
+}
+
+.c-button2:hover {
+  background: #fc7a00;
+}
+
+.text-field__input {
+
+  width: 30%;
+  height: 6%;
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #8a8988;
+  background-color: #6b6b6b;
+  background-clip: padding-box;
+
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.text-field__input:focus {
+  color: #7fcf00;
+  background-color: #fff;
+  border-color: #7fcf00;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.text-field__input2 {
+  display: block;
+  width: 34%;
+  height: 6%;
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #8a8988;
+  background-color: #6b6b6b;
+  background-clip: padding-box;
+
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.text-field__input2:focus {
+  color: #fc7a00;
+  background-color: #fff;
+  border-color: #fc7a00;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.text-field__input3 {
+  display: block;
+  width: 65%;
+  height: 6%;
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #8a8988;
+  background-color: #6b6b6b;
+  background-clip: padding-box;
+
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.text-field__input3:focus {
+  color: #fc7a00;
+  background-color: #fff;
+  border-color: #fc7a00;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.text-field__input4 {
+
+  width: 65%;
+  height: 2%;
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 5%;
+  line-height: 1.5;
+  color: #8a8988;
+  background-color: #6b6b6b;
+  background-clip: padding-box;
+
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  margin-bottom: 0%
+}
+
+.text-field__input4:focus {
+  color: #7fcf00;
+  background-color: #fff;
+  border-color: #7fcf00;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.text-field__input5 {
+
+  width: 30%;
+  height: 6%;
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #8a8988;
+  background-color: #6b6b6b;
+  background-clip: padding-box;
+
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.text-field__input5:focus {
+  color: #8a8988;
+  background-color: #fff;
+  border-color: #8a8988;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.custom-checkbox+label::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #7f7f7f;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.custom-checkbox:checked+label::before {
+  border-color: #7fcf00;
+  background-color: #7fcf00;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.custom-checkbox:not(:disabled):not(:checked)+label:hover::before {
+  border-color: #f5f6f7;
+}
+
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.custom-checkbox:not(:disabled):active+label::before {
+  background-color: #7fcf00;
+  border-color: #7fcf00;
+}
+
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox:focus+label::before {
+  box-shadow: №7fcf00;
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox:focus:not(:checked)+label::before {
+  border-color: #7fcf00;
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox:disabled+label::before {
+  background-color: #e9ecef;
+}
+
+.custom-checkbox1 {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.custom-checkbox1+label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+.custom-checkbox1+label::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #7f7f7f;
+  border-radius: 0.25em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.custom-checkbox1:checked+label::before {
+  border-color: #fc7a00;
+  background-color: #fc7a00;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.custom-checkbox1:not(:disabled):not(:checked)+label:hover::before {
+  border-color: #f5f6f7;
+}
+
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.custom-checkbox1:not(:disabled):active+label::before {
+  background-color: #fc7a00;
+  border-color: #fc7a00;
+}
+
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox1:focus+label::before {
+  box-shadow: №7fcf00;
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox1:focus:not(:checked)+label::before {
+  border-color: #fc7a00;
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox1:disabled+label::before {
+  background-color: #e9ecef;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+  /* ширина scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  background: #1b191c;
+  /* цвет дорожки */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #8a8988;
+  /* цвет плашки */
+  border-radius: 50px;
+  /* закругления плашки */
+  border: 3px solid #1b191c;
+  /* padding вокруг плашки */
+}
+
+.close {
+  color: #fc7a00;
+}
+
+.close,
+#custom-label5 {
+  display: inline-block;
+}
+    </style>
+</head>
+
+<body>
+    <div id="StartWork">
+        <label for="azsId" id="custom-label4">ID АЗС:</label>
+        <input class="text-field__input5" type="text" id="azsId" name="azsId"><br><br>
+
+        <label for="columnId" id="custom-label4">ID колонки:</label>
+        <input class="text-field__input5" type="text" id="columnId" name="columnId"><br><br>
+
+        <button onclick="sendData()" class="c-button">Начать работу</button>
+    </div>
+
+    <div id="fuelOptions" class="hidden">
+        <label for="fuelType">Шаг 1. Выберите вид топлива:</label><br>
+        <select class="text-field__input4" id="fuelType"></select><br>
+    </div>
+
+    <div id="refuelingOptions" class="hidden">
+        <label for="refuelingMode">Шаг 2. Выберите режим заправки:</label><br>
+        <input type="radio" class="custom-checkbox" id="fixedVolume" name="refuelingMode" value="fixedVolume" checked>
+        <label id="custom-label" for="fixedVolume">Фиксированный объем:</label>
+        <input class="text-field__input" type="text" id="fixedVolumeAmount" name="fixedVolumeAmount" value=0>
+        <label id="custom-label">Литров</label><br>
+
+        <input class="custom-checkbox" type="radio" id="fixedPrice" name="refuelingMode" value="fixedPrice">
+        <label id="custom-label" for="fixedPrice">Фиксированная цена:</label>
+        <input class="text-field__input" type="text" id="fixedPriceAmount" name="fixedPriceAmount" value=0>
+        <label id="custom-label">Рублей</label><br>
+    </div>
+
+    <div id="paymentOptions" class="hidden">
+        <label for="paymentMethod">Шаг 3. Выберите способ оплаты:</label><br>
+        <input type="radio" class="custom-checkbox" id="loyaltyCard" name="paymentMethod" value="loyaltyCard" checked>
+        <label id="custom-label" for="loyaltyCard">Накопительная карта</label><br>
+        <input type="radio" class="custom-checkbox" id="bankCard" name="paymentMethod" value="bankCard">
+        <label id="custom-label" for="bankCard">Банковская карта</label><br>
+        <div class="line"></div>
+        <div id="cardDetailsModal" class="modal">
+            <div class="modal-content">
+                <h2 id="custom-label2"> Ввод данных карты</h2>
+                <div class="modal-input">
+                    <label id="custom-label3" for="cardNumber">Номер карты:</label><br>
+                    <input class="text-field__input2" type="text" id="cardNumber" name="cardNumber" maxlength="19"
+                        pattern="\d{4}\s?\d{4}\s?\d{4}\s?\d{4}" placeholder="xxxx xxxx xxxx xxxx" required>
+                </div>
+                <div class="modal-input">
+                    <label id="custom-label3" for="cardHolder">Держатель карты:</label><br>
+                    <input class="text-field__input2" type="text" id="cardHolder" name="cardHolder"
+                        pattern="[a-zA-Z]+\s[a-zA-Z]+" placeholder="Имя Фамилия" required>
+                </div>
+                <div class="modal-input">
+                    <label id="custom-label3" for="cardcvc">cvc</label><br>
+                    <input class="text-field__input2" type="text" id="cardcvc" name="cardcvc" maxlength="3"
+                        placeholder="xxx" required>
+                </div>
+                <div class="modal-error" id="cardDetailsError"></div>
+                <button class="c-button2" onclick="processPayment()">Оплатить</button>
+            </div>
+        </div>
+        <div id="bonuscardDetailsModal" class="modal">
+            <h2 id="custom-label5"> Ввод данных бонусной карты</h2>
+            <div class="modal-input">
+                <label id="custom-label3" for="PhoneNumber">Номер телефона:</label>
+                <input class="text-field__input2" type="text" id="PhoneNumber" name="PhoneNumber"
+                    placeholder="Номер телефона" required>
+            </div>
+            <div class="modal-error" id="cardDetailsError"></div>
+            <div id="BonusCardChoice" class="hidden">
+                <label id="custom-label3" for="paymentMethod">Выберите дальнейший способ оплаты в случае нехватки
+                    бонусов:</label><br>
+                <input class="custom-checkbox1" type="radio" id="BankCardNext" name="NextPaymentOption"
+                    value="BankCardNext" checked>
+                <label id="custom-label3" for="BankCardNext">Доплатить с Банковской карты</label><br>
+                <input class="custom-checkbox1" type="radio" id="SpendAllBonus" name="NextPaymentOption"
+                    value="SpendAllBonus">
+                <label id="custom-label3" for="SpendAllBonus">Залить литров, на которые хватает</label><br>
+            </div>
+            <button class="c-button2" onclick="processPayment()">Оплатить</button>
+            <button class="c-button2" id="openModalBtn">Создать новую карту</button>
+        </div>
+    </div>
+    <div class="modal-content">
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="custom-label5">Анкета на создание новой карты</h2> <br>
+
+                <label id="custom-label3" for="cardNumber">Номер телефона:</label>
+                <input class="text-field__input2" type="text" id="BonCardNumber" name="cardNumber"
+                    placeholder="Номер телефона">
+
+                <label id="custom-label3" for="BonCardHolder">Владелец карты:</label>
+                <input class="text-field__input2" type="text" id="BonCardHolder" name="cardHolder"
+                    placeholder="Владец карты"><br>
+
+                <button class="c-button2" onclick="createNewCard()">Создать</button>
+            </div>
+        </div>
+    </div>
+    <div id="responseContainer"></div>
+
+
+    <script>
+        let CurStattionInfo
+
+        const bankCardNextRadio = document.getElementById("BankCardNext");
+        const spendAllBonusRadio = document.getElementById("SpendAllBonus");
+
+        bankCardNextRadio.addEventListener("change", function () {
+          if (bankCardNextRadio.checked) {
+            spendAllBonusRadio.checked = false;
+          }
+        });
+
+        spendAllBonusRadio.addEventListener("change", function () {
+          if (spendAllBonusRadio.checked) {
+            bankCardNextRadio.checked = false;
+          }
+        });
+
+        async function urlreq(url, options) {
+          try {
+            const response = await fetch(url, options);
+            if (response.ok) {
+              const data = await response.json();
+              return JSON.stringify(data);
+            }
+            throw new Error('Network response was not OK.');
+          } catch (error) {
+            return error.message;
+          }
+        }
+
+        var optionsGet = {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        };
+
+        function showOptions(response) {
+          document.getElementById('fuelOptions').classList.remove('hidden');
+          document.getElementById('refuelingOptions').classList.remove('hidden');
+          document.getElementById('paymentOptions').classList.remove('hidden');
+          document.getElementById('BonusCardChoice').classList.remove('hidden');
+          document.getElementById('StartWork').classList.add('hidden')
+
+          cardDetailsModal.style.display = 'none';
+          var fuelTypeSelect = document.getElementById("fuelType");
+          fuelTypeSelect.innerHTML = "";
+
+          for (let index = 0; index < 4; index++) {
+            if (response["fuel_types"][index].amount_of_fuel <= 50) {
+              var option = document.createElement("option");
+              option.value = response["fuel_types"][index].name
+              option.text = `${response["fuel_types"][index].name} - нет в наличии`
+              fuelTypeSelect.appendChild(option);
+            }
+            else {
+              var option = document.createElement("option");
+              option.value = response["fuel_types"][index].name
+              option.text = `${response["fuel_types"][index].name} - есть в наличии
+              цена: ${response["fuel_types"][index].price} руб/л`
+
+              fuelTypeSelect.appendChild(option);
+            }
+          }
+        }
+
+        function displayResponse(response) {
+          const responseContainer = document.getElementById('responseContainer');
+          responseContainer.innerText = '';
+          const responseText = JSON.stringify(response);
+          responseContainer.innerText = responseText;
+        }
+
+        async function sendData() {
+          const azsId = document.getElementById('azsId').value;
+          const columnId = document.getElementById('columnId').value;
+
+          url = `http://127.0.0.1:8080/getStationInfo/?id=${azsId}`;
+          const response = JSON.parse(await urlreq(url, optionsGet));
+          CurStattionInfo = response;
+          showOptions(response);
+        }
+
+        function findFuelPrice(fuelTypes, fuelName) {
+          for (var i = 0; i < fuelTypes.length; i++) {
+            if (fuelTypes[i].name === fuelName) {
+              return fuelTypes[i].price;
+            }
+          }
+          return "Цена не найдена";
+        }
+
+        function findFuelAmount(fuelTypes, fuelName) {
+          for (var i = 0; i < fuelTypes.length; i++) {
+            if (fuelTypes[i].name === fuelName) {
+              return fuelTypes[i].amount_of_fuel;
+            }
+          }
+          return "Ошибка";
+        }
+
+
+        async function processPayment() {
+
+          const cardNumberInput = document.getElementById('cardNumber');
+          const cardHolderInput = document.getElementById('cardHolder');
+          const cardCVCInput = document.getElementById('cardcvc');
+
+          const bonusCardInput = document.getElementById('PhoneNumber')
+
+
+          const cardNumber = cardNumberInput.value.replace(/\s/g, '');
+          const cardHolder = cardHolderInput.value.trim();
+
+          const FuelName = document.getElementById('fuelType').value;
+
+          const fixedVolume = document.getElementById('fixedVolume');
+          const fixedPrice = document.getElementById('fixedPrice');
+
+          const BonusCardCheck = document.getElementById('loyaltyCard');
+          const BankCardCheck = document.getElementById('bankCard');
+
+          const fixedPriceAmount = document.getElementById('fixedPriceAmount');
+          const fixedVolumeAmount = document.getElementById('fixedVolumeAmount');
+
+          let Amount
+          let Chose_fuel_or_price
+          let Chose_bank_or_bonus
+          let StationID = CurStattionInfo.station_id
+          let BankCard = cardNumberInput.value
+          let FuelPrice = findFuelPrice(CurStattionInfo["fuel_types"], FuelName)
+          let pincode = cardCVCInput.value
+
+          if (fixedVolume.checked) {
+            Chose_fuel_or_price = "Fuel"
+            Amount = fixedVolumeAmount.value
+          } else if (fixedPrice.checked) {
+            Chose_fuel_or_price = "Price"
+            Amount = fixedPriceAmount.value
+          }
+
+          if (BankCardCheck.checked) {
+            Chose_bank_or_bonus = 'Bank';
+          } else if (BonusCardCheck.checked) {
+            Chose_bank_or_bonus = 'Bonus';
+          }
+
+          if (Chose_fuel_or_price === 'Fuel' && Chose_bank_or_bonus === 'Bank') {
+            let FuelAmount = Math.round((fixedPriceAmount.value / FuelPrice) * 100) / 100;
+            let TotalFuelCost = Math.round((FuelAmount * FuelPrice) * 100) / 100;
+
+            displayResponse('Данные карты введены не верно');
+            const urlGETcard = `http://127.0.0.1:8080/get-bank-cards/?bankcard=${BankCard}`;
+            const urlGETstationinfo = `http://127.0.0.1:8080/getStationInfo?id=${StationID}`;
+
+            const GetCardResponse = JSON.parse(await urlreq(urlGETcard, optionsGet));
+            const GetStationInfoResponse = JSON.parse(await urlreq(urlGETstationinfo, optionsGet));
+
+            if (TotalFuelCost > Number(GetCardResponse.Balance)) {
+              displayResponse('Недостаточно денег')
+              return 0;
+            }
+            if (Number(FuelAmount) > findFuelAmount(GetStationInfoResponse.fuel_types, FuelName)) {
+              displayResponse('Недостаточно топлива')
+              return 0;
+            }
+
+            if (TotalFuelCost <= Number(GetCardResponse.Balance)
+              && Number(FuelAmount) <= findFuelAmount(GetStationInfoResponse.fuel_types, FuelName)
+              && pincode == GetCardResponse.code) {
+              displayResponse(`Вам будет залито ${FuelAmount} литра(ов) ${FuelName} на сумму: ${TotalFuelCost} руб.`)
+              return 0;
+
+            } else {
+
+              displayResponse('Данные карты введены не верно');
+              return 0;
+            }
+          }
+          else if (Chose_fuel_or_price === 'Price' && Chose_bank_or_bonus === 'Bank') {
+
+            let BonusCard = bonusCardInput.value
+            let FuelAmount = Math.round((fixedPriceAmount.value / FuelPrice) * 100) / 100;
+            let TotalFuelCost = Math.round((FuelAmount * FuelPrice) * 100) / 100;
+            displayResponse('Данные карты введены не верно');;
+            const urlGETcard = `http://127.0.0.1:8080/get-bank-cards/?bankcard=${BankCard}`;
+            const urlGETstationinfo = `http://127.0.0.1:8080/getStationInfo?id=${StationID}`;
+
+            const GetCardResponse = JSON.parse(await urlreq(urlGETcard, optionsGet));
+            const GetStationInfoResponse = JSON.parse(await urlreq(urlGETstationinfo, optionsGet));
+
+            if (pincode != GetCardResponse.code) {
+              displayResponse('Данные карты введены не верно');
+              return 0;
+            }
+            if (TotalFuelCost > Number(GetCardResponse.Balance)) {
+              displayResponse('Недостаточно денег')
+              return 0;
+            }
+            if (Number(FuelAmount) > findFuelAmount(GetStationInfoResponse.fuel_types, FuelName)) {
+              displayResponse('Недостаточно топлива')
+              return 0;
+            }
+            displayResponse(`Вам будет залито ${FuelAmount} литра(ов) ${FuelName} на сумму: ${TotalFuelCost} руб.`);
+          } else if (Chose_fuel_or_price === 'Fuel' && Chose_bank_or_bonus === 'Bonus') {
+
+            let BonusCard = bonusCardInput.value
+            const FuelAmount = Amount;
+            const TotalFuelCost = Number(FuelAmount) * Number(FuelPrice);
+
+            const urlGETcard = `http://127.0.0.1:8080/get-bonus-cards/?bonuscard=${BonusCard}`;
+            const urlGETstationinfo = `http://127.0.0.1:8080/getStationInfo?id=${StationID}`;
+
+            displayResponse('Бонусная карта не найдена')
+            const GetCardResponse = JSON.parse(await urlreq(urlGETcard, optionsGet));
+            const GetStationInfoResponse = JSON.parse(await urlreq(urlGETstationinfo, optionsGet));
+
+            if (GetCardResponse.Balance < TotalFuelCost) {
+              if (bankCardNextRadio.checked) {
+                let NeedToPay = Math.round((TotalFuelCost - GetCardResponse.Balance) * 100) / 100;
+
+                displayResponse(`вам не хватает бонусов, доплатите ${NeedToPay} руб. при помощи вашей карты`);
+                fixedVolumeAmount.value = Math.round((NeedToPay / FuelPrice) * 100) / 100
+                handlePaymentMethodChange();
+              }
+              else if (spendAllBonusRadio.checked) {
+                let CanFillWithBonus = Math.round((GetCardResponse.Balance / FuelPrice) * 100) / 100
+                let BonusWillSpend = Math.round((CanFillWithBonus * FuelPrice) * 100) / 100
+                displayResponse(`Будет залито ${CanFillWithBonus} литров ${FuelName} и списано ${BonusWillSpend} бонусов`)
+              }
+            }
+            else {
+              displayResponse(`Будет залито ${FuelAmount} литра(ов) ${FuelName} и списано ${TotalFuelCost} бонусов`)
+            }
+          }
+          else if (Chose_fuel_or_price === 'Price' && Chose_bank_or_bonus === 'Bonus') {
+
+            let BonusCard = bonusCardInput.value
+            let FuelAmount = Math.round((fixedPriceAmount.value / FuelPrice) * 100) / 100;
+            const TotalFuelCost = Math.round((FuelAmount * FuelPrice) * 100) / 100;
+
+            const urlGETcard = `http://127.0.0.1:8080/get-bonus-cards/?bonuscard=${BonusCard}`;
+            const urlGETstationinfo = `http://127.0.0.1:8080/getStationInfo?id=${StationID}`;
+
+            displayResponse('Бонусная карта не найдена')
+            const GetCardResponse = JSON.parse(await urlreq(urlGETcard, optionsGet));
+            const GetStationInfoResponse = JSON.parse(await urlreq(urlGETstationinfo, optionsGet));
+
+            if (GetCardResponse.Balance < TotalFuelCost) {
+              if (bankCardNextRadio.checked) {
+                let NeedToPay = Math.round((TotalFuelCost - GetCardResponse.Balance) * 100) / 100;
+                document.getElementById("bankCard").checked = true;
+                displayResponse(`вам не хватает бонусов, доплатите ${NeedToPay} руб. при помощи вашей карты`);
+                fixedPriceAmount.value = NeedToPay;
+                handlePaymentMethodChange();
+              }
+              else if (spendAllBonusRadio.checked) {
+                let CanFillWithBonus = Math.round((GetCardResponse.Balance / FuelPrice) * 100) / 100
+                let BonusWillSpend = Math.round((CanFillWithBonus * FuelPrice) * 100) / 100
+                displayResponse(`Будет залито ${CanFillWithBonus} литра(ов) ${FuelName} и списано ${BonusWillSpend} бонусов`)
+              }
+            }
+            else {
+              displayResponse(`Будет залито ${FuelAmount} литров ${FuelName} и списано ${TotalFuelCost} бонусов`)
+            }
+          }
+        }
+
+        function validateCardNumber(cardNumber) {
+          const cardNumberPattern = /^\d{16}$/;
+          return cardNumberPattern.test(cardNumber);
+        }
+
+        function validateCardHolder(cardHolder) {
+          const cardHolderPattern = /^[a-zA-Z]+\s[a-zA-Z]+$/;
+          return cardHolderPattern.test(cardHolder);
+        }
+
+        function openModal() {
+          const modal = document.getElementById('cardDetailsModal');
+          modal.style.display = 'block';
+        }
+
+        function closeModal() {
+          const modal = document.getElementById('cardDetailsModal');
+          modal.style.display = 'none';
+        }
+
+        function handlePaymentMethodChange() {
+          const cardDetailsModal = document.getElementById('cardDetailsModal');
+          const bankCardOption = document.getElementById('bankCard');
+
+
+          if (bankCardOption.checked) {
+            cardDetailsModal.style.display = 'block';
+            bonuscardDetailsModal.style.display = 'none';
+          } else {
+            cardDetailsModal.style.display = 'none';
+            bonuscardDetailsModal.style.display = 'block';
+          }
+        }
+
+        const paymentMethodOptions = document.querySelectorAll('input[name="paymentMethod"]');
+        paymentMethodOptions.forEach(option => {
+          option.addEventListener('change', handlePaymentMethodChange);
+        });
+
+        const modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        const btn = document.getElementById("openModalBtn");
+        const closeBtn = document.querySelector(".close");
+        const form = document.getElementById("cardForm");
+
+        btn.addEventListener("click", function () {
+          modal.style.display = "block";
+        });
+
+        closeBtn.addEventListener("click", function () {
+          modal.style.display = "none";
+          const responseContainer = document.getElementById('responseContainer');
+          responseContainer.innerText = '';
+        });
+
+        window.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            modal.style.display = "none";
+            const responseContainer = document.getElementById('responseContainer');
+            responseContainer.innerText = '';
+          }
+        });
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          createNewCard();
+          modal.style.display = "none";
+        });
+
+        async function createNewCard() {
+
+          const cardNumber = document.getElementById("BonCardNumber");
+          const cardHolder = document.getElementById("BonCardHolder");
+
+          url = "http://127.0.0.1:8080/set-bonus-cards/"
+          const optionsPOST = {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              BonusCard: cardNumber.value,
+              CardHolder: cardHolder.value, 
+              Balance: 0 
+            })
+          };
+
+          displayResponse('Ошибка при создании карты')
+          const POSTresponse = JSON.parse(await urlreq(url, optionsPOST))
+          displayResponse("Карта создана успешно")
+          modal.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

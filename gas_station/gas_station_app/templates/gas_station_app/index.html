@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AZS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+    body {
+     font-family: 'Russo One', sans-serif;
+     font-size: 28px;
+     background-color:#1b191c;
+     color: #c2590e;
+    }
+    #custom-label{
+    color: #8a8988;
+    font-size: 15px;
+    }
+
+
+    #custom-label2{
+    color: #fc7a00;
+    font-size: 27px;
+    text-align: center;
+    }
+
+    #custom-label3{
+    color: #c2590e;
+    font-size: 17px;
+    }
+
+    #custom-label4{
+    color: #9c9a9a;
+    font-size: 26px;
+    }
+
+    #custom-label5{
+    color: #fc7a00;
+    font-size: 27px;
+    text-align: center;
+
+    }
+
+    .line {
+      margin-left: 0;
+      width: 99%;
+      height: 2px;
+      background-color: #242323;
+      margin-bottom: 10px
+    }
+
+    .container-search {
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 15px;
+    }
+
+    .num-field__input, .num-field__btn {
+        width: 30%;
+        height: 6%;
+        padding: 0.375rem 0.75rem;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #8a8988;
+        background-color: #6b6b6b;
+        background-clip: padding-box;
+
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    }
+
+    .num-field__input:focus {
+        color: #8a8988;
+        background-color: #fff;
+        border-color: #8a8988;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+    }
+
+    .num-field__btn {
+        appearance: none;
+        border: 10;
+        border-radius: 10px;
+        background: #1b191c;
+        color: #5e5e5e;
+        padding: 8px 16px;
+        font-size: 16px;
+        border-color: #5e5e5e;
+    }
+
+    .num-field__btn:hover {
+        background: #f7f7f7;
+    }
+
+    #azsData {
+        display: none;
+        margin-top: 20px;
+    }
+
+    #azsData h2 {
+        font-size: 27px;
+        margin-bottom: 10px;
+    }
+
+    #azsData input[type="text"],
+    #azsData input[type="number"] {
+        width: 80%;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+
+    #azsData button {
+        padding: 10px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #azsData button:hover {
+        background-color: #45a049;
+    }
+
+    body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #1b191c;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #8a8988;
+    border-radius: 50px;
+    border: 3px solid #1b191c;
+  }
+    </style>
+    <div class="line"></div>
+    <div class="cotnainer-search">
+        <label id="custom-label4" for="stationId">ID АЗС:</label>
+        <div class="button-search">
+            <input class="num-field__input" type="number" id="stationId" min="1" max="99" />
+            <button class="num-field__btn" onclick="loadData()">Далее</button>
+        </div>
+        <br>
+        <div class="line"></div>
+    </div>
+
+    <div id="azsData" style="display: none;">
+        <h2>Управление АЗС №<span id="stationIdValue"></span></h2>
+        <label for="geographicalAddress">Географический адрес АЗС:</label>
+        <input class="num-field__input" type="text" id="geographicalAddress" />
+
+        <label for="price92">Цена литра АИ-92 в рублях:</label>
+        <input class="num-field__input" type="text" id="price92" />
+
+        <label for="amount92">Остаток АИ-92 в хранилище в литрах:</label>
+        <input class="num-field__input" type="number" id="amount92" />
+
+        <label for="price95">Цена литра АИ-95 в рублях:</label>
+        <input class="num-field__input" type="text" id="price95" />
+
+        <label for="amount95">Остаток АИ-95 в хранилище в литрах:</label>
+        <input class="num-field__input" type="number" id="amount95" />
+
+        <label for="price98">Цена литра АИ-98 в рублях:</label>
+        <input class="num-field__input" type="text" id="price98" />
+
+        <label for="amount98">Остаток АИ-98 в хранилище в литрах:</label>
+        <input class="num-field__input" type="number" id="amount98" />
+
+        <label for="priceDF">Цена литра ДТ в рублях:</label>
+        <input class="num-field__input" type="text" id="priceDF" />
+
+        <label for="amountDF">Остаток ДТ в хранилище в литрах:</label>
+        <input class="num-field__input" type="number" id="amountDF" />
+
+
+        <button class="num-field__btn" onclick="saveChanges()">Сохранить</button>
+
+    </div>
+
+    <script>
+    function loadData() {
+    const stationId = document.getElementById('stationId').value;
+
+ 
+    fetch(`/getStationInfo?id=${stationId}`, {
+        method: 'GET',
+    })
+    .then(response => response.json())
+    .then(data => {
+      
+        displayLoadedData(data);
+    })
+    .catch(error => {
+        console.error('Error loading data:', error);
+        alert('Error loading data');
+    });
+    }
+
+
+function displayLoadedData(data) {
+    document.getElementById('stationIdValue').innerText = data.station_id;
+    document.getElementById('geographicalAddress').value = data.address;
+    document.getElementById('stationIdValue').innerText = data.station_id;
+    document.getElementById('geographicalAddress').value = data.address;
+    const fuel92 = data.fuel_types.find(fuel => fuel.name === '92');
+    if (fuel92) {
+        document.getElementById('price92').value = fuel92.price;
+        document.getElementById('amount92').value = fuel92.amount_of_fuel;
+    }
+    const fuel95 = data.fuel_types.find(fuel => fuel.name === '95');
+    if (fuel95) {
+        document.getElementById('price95').value = fuel95.price;
+        document.getElementById('amount95').value = fuel95.amount_of_fuel;
+    }
+    const fuel98 = data.fuel_types.find(fuel => fuel.name === '98');
+    if (fuel98) {
+        document.getElementById('price98').value = fuel98.price;
+        document.getElementById('amount98').value = fuel98.amount_of_fuel;
+    }
+    const df = data.fuel_types.find(fuel => fuel.name === 'Disel Fuel');
+    if (df) {
+        document.getElementById('priceDF').value = df.price;
+        document.getElementById('amountDF').value = df.amount_of_fuel;
+    }
+    document.getElementById('azsData').style.display = 'block';
+    }
+
+
+function saveChanges() {
+    const stationId = document.getElementById('stationId').value;
+    const geographicalAddress = document.getElementById('geographicalAddress').value;
+
+    const postData = {
+        'station_id': stationId,
+        'address': geographicalAddress,
+    };
+
+    fetch('/setStation/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(postData),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            alert('Changes saved successfully');
+        } else {
+            alert('Failed to save changes');
+        }
+    })
+    .catch(error => {
+        console.error('Error saving changes:', error);
+        alert('Error saving changes');
+    });
+    }
+    </script>
+</body>
+
+</html>
